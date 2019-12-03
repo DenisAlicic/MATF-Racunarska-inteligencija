@@ -59,6 +59,8 @@ def simulateAnnealing(nbUsers, nbResources, cost, fixedCost, maxIter, probabilit
     bestValue = currValue
     i = 0
     while i < maxIter:
+        if i % 1000 == 0:
+            print("Iteration: {}\nSolution: {}".format(i, bestValue))
         j = invert(nbResources, solution)
         if j < 0:
             continue
